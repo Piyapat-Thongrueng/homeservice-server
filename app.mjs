@@ -4,13 +4,14 @@ import "dotenv/config";
 import connectionPool from "./utils/db.mjs";
 
 const app = experss();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 app.use(experss.json());
 app.use(
   cors({
     origin: [
       "http://localhost:5173", // Frontend local (Vite)
       "http://localhost:3000", // Frontend local (React แบบอื่น)// Frontend ที่ Deploy แล้ว
+      "https://homeservice-frontend.vercel.app",
       // ✅ ให้เปลี่ยน https://your-frontend.vercel.app เป็น URL จริงของ Frontend ที่ deploy แล้ว
     ],
   }),
